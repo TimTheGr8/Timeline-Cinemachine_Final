@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Spaceship_Cameras.unity
+    guid: 07d0ee000da012e4f86725bdb41dcf1d
   m_configObjects: {}
