@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class ShipControls : MonoBehaviour
 {
-    [SerializeField] private float _rotSpeed;
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _currentSpeed;
+    [SerializeField] 
+    private float _rotSpeed;
+    [SerializeField] 
+    private float _moveSpeed;
+    [SerializeField] 
+    private float _currentSpeed;
+    [SerializeField]
+    private float _maxSpeed = 10;
     private float _roll;
     private float _yaw;
     private float _pitch;
-    [SerializeField] private float _maxRotate;
-    [SerializeField] private GameObject _shipModel;
+    [SerializeField] 
+    private float _maxRotate;
+    [SerializeField] 
+    private GameObject _shipModel;
+
+    [SerializeField]
+    private Material _earth;
+    [SerializeField]
+    private Material _jupiter;
+    [SerializeField]
+    private Material _galaxy;
 
     // Start is called before the first frame update
     void Start()
@@ -37,11 +51,11 @@ public class ShipControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             _currentSpeed++;
-            if (_currentSpeed > 4)
+            if (_currentSpeed > _maxSpeed)
             {
-                _currentSpeed = 4;
+                _currentSpeed = _maxSpeed;
             }
-        }//increase speed
+        }
 
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -50,7 +64,7 @@ public class ShipControls : MonoBehaviour
             {
                 _currentSpeed = 1;
             }
-        }//decrease speed
+        }
 
         // Yaw rotate 
         Vector3 yawRotate = new Vector3(0, _yaw, 0);
