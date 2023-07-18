@@ -20,12 +20,12 @@ public class VCController : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown == false || Input.GetAxis("Mouse X") == 0 || Input.GetAxis("Mouse Y") == 0 && !_countdownStarted)
+        if (Input.anyKey == false || Input.GetAxis("Mouse X") == 0 || Input.GetAxis("Mouse Y") == 0 && !_countdownStarted)
         {
             _countdownStarted = true;
             StartCoroutine(DetectInput());
         }
-        if (Input.anyKeyDown == true || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0 && _countdownStarted)
+        if (Input.anyKey == true || Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0 && _countdownStarted)
         {
             _countdownStarted = false;
             _cinematicSequencePlaying = false;
