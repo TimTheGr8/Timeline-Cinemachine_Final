@@ -29,6 +29,8 @@ public class Teleport : MonoBehaviour
     [SerializeField]
     private GameManager _gm;
 
+    private AudioSource _auido;
+
     private void Update()
     {
         transform.LookAt(Camera.main.transform);
