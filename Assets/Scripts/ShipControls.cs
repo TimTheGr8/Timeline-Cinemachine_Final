@@ -18,7 +18,7 @@ public class ShipControls : MonoBehaviour
     [SerializeField] 
     private float _maxRotate;
     [SerializeField] 
-    private GameObject _shipModel;
+    private Transform _startingLocation;
 
     [SerializeField]
     private Material _earth;
@@ -68,7 +68,7 @@ public class ShipControls : MonoBehaviour
 
         // Yaw rotate 
         Vector3 yawRotate = new Vector3(0, _yaw, 0);
-        transform.Rotate(yawRotate * _rotSpeed * Time.deltaTime);
+        transform.Rotate(yawRotate * _rotSpeed * Time.deltaTime); 
 
         // Roll rotate
         Vector3 rollRotate = new Vector3(-_roll, 0, 0);
@@ -78,5 +78,10 @@ public class ShipControls : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, -_pitch * 0.2f), Space.Self);
 
         transform.position += transform.right * _currentSpeed * Time.deltaTime;
+    }
+
+    public void ReturnToStartingPosition()
+    {
+        this.transform.position = _startingLocation.transform.position;
     }
 }

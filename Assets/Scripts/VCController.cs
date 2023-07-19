@@ -68,7 +68,6 @@ public class VCController : MonoBehaviour
     IEnumerator DetectInput()
     {
         yield return new WaitForSeconds(5);
-        Debug.Log("Switch Cameras");
         _cinematicSequencePlaying = true;
         CinematicSequence(_cinematicSequencePlaying);
     }
